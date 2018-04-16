@@ -1,8 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
 
-console.log(__dirname, '/app/index.js');
-
 module.exports = {
 	entry: [
 		path.join(__dirname, '/app/index.js')
@@ -14,18 +12,26 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel-loader'
 			},{
-				test: /\.scss$/,
+			test: /\.scss$/,
 				use: [{
 					loader: "style-loader"
 				}, {
-					loader: "css-loader"
+					loader: "css-loader",
+					options: {
+						sourceMap: true
+					}
 				}, {
 					loader: "sass-loader",
 					options: {
-						includePaths: [path.join(__dirname, '/scss/first.scss')]
-					}
+						sourceMap: true
+					},
 				}]
-			}
+			},
+			{ 
+			test: /\.(png|jpg)$/,
+				// include: path.join(__dirname, 'img'),
+				loader: 'url-loader' 
+			 }
 		]
     },
     
