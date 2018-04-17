@@ -35,8 +35,8 @@ export class Animal extends Component{
     render() {
         return (
             <div className="animal"
-                onMouseOver={this.mouseOver}
-                onMouseOut={this.mouseOut}
+                onMouseEnter={this.mouseOver}
+                onMouseLeave={this.mouseOut}
                 >
 
                 <div className="animal__id">
