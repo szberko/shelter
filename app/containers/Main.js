@@ -3,6 +3,7 @@ import {Animal} from './Animal';
 import ReactDOM from 'react-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
+import myData from './../data/animals.json';
 
 export class Main extends Component{
     render() {
@@ -16,11 +17,32 @@ export class Main extends Component{
                     </TabList>
                 
                     <TabPanel>
-                        <Animal/>
-                        <Animal/>
+                    {
+                        myData.map(function(animal, i){
+                            if(!animal.adopted && !animal.removed){
+                                return <Animal 
+                                        key={i} 
+                                        name={animal.name} 
+                                        chip={animal.chip}
+                                        color={animal.color}
+                                        type={animal.type}/>
+                            }
+                        })
+                    }
                     </TabPanel>
                     <TabPanel>
-                        <Animal/>
+                    {
+                        myData.map(function(animal, i){
+                            if(animal.adopted && !animal.removed){
+                                return <Animal 
+                                        key={i} 
+                                        name={animal.name} 
+                                        chip={animal.chip}
+                                        color={animal.color}
+                                        type={animal.type}/>
+                            }
+                        })
+                    }
                     </TabPanel>
                 </Tabs>
                     <div id="filter">Szűrő</div>

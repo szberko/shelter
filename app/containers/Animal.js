@@ -29,16 +29,14 @@ export class Animal extends Component{
                 <div className="animal__id">
                     <div className="animal__pic"></div>
                     <div className="animal__metadata">
-                        <span className="metadata__name">Morzsi (1)</span>
-                        <span className="metadata__others">Chip-szám: 61654684</span>
-                        <span className="metadata__others">Szőrszín: vörös</span>
+                        <span className="metadata__name">{this.props.name}</span>
+                        <span className="metadata__others">Chip-szám: {this.props.chip}</span>
+                        <span className="metadata__others">Szőrszín: {this.props.color}</span>
                     </div>
                 </div>
 
                 
-                <div className="animal__type">
-                    Kutya
-                </div>
+                <div className="animal__type">{this.props.type}</div>
                 <div className={"animal__options " + this.state.hover}>
                     <button className="options__adapt">Adoptálás</button>
                     <div className="options__remove">
