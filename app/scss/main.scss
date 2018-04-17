@@ -60,12 +60,12 @@ body{
                 flex-direction: row;
                 justify-content: space-between;
 
-                .navigation ul{
+                .react-tabs__tab-list{
                     margin: 0px;
                     padding: 0px;
                     list-style-type: none;
     
-                    li.navigation__tab{
+                    li.react-tabs__tab{
                         display: inline-block;
                         padding: 0 15px;
                     }
