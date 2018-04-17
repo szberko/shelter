@@ -25,7 +25,7 @@ export class Main extends Component{
         return (
             <div className="main-container__body">
                 <div className="body__menu">
-                <Tabs selectedTabPanelClassName="body__content">
+                <Tabs>
                     <TabList>
                         <Tab>Gazdára vár</Tab>
                         <Tab>Örökbeadott</Tab>
