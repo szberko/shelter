@@ -142,9 +142,10 @@ body{
 
                     .animal__options{
                         display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
                         visibility: hidden;
                         width: 30%;
-                        flex-direction: row;
                         margin: 35px;
 
                         .options__adapt{
@@ -154,7 +155,7 @@ body{
                             background-image: linear-gradient(to right, #f37942, #e91562);
                             line-height: 30px;
                             text-align: center;
-                            margin: 0 30px;
+                            margin: 0 20px;
                         }
 
                         .options__remove{
