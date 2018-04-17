@@ -47,10 +47,10 @@ export class Animal extends Component{
                         <span className="metadata__others">Szőrszín: {this.props.animal.color}</span>
                     </div>
                 </div>
-
                 
                 <div className="animal__type">{this.props.animal.type}</div>
-                <div className={"animal__options " + this.state.hover}>
+
+                <div className={"animal__options " + (this.props.animal.adopted == false ? this.state.hover : '') }>
                     <button className="options__adapt" onClick={() => this.adapt()}>Adoptálás</button>
                     <div className="options__remove" onClick={() => this.remove()}>
                         <img src={require('./../assets/group-9.png')} 

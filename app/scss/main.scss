@@ -84,13 +84,15 @@ body{
 
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-between;
+                    justify-content: center;
+                    flex-wrap: nowrap;
 
                     *{
                         z-index: 1;
                     }
 
                     .animal__id{
+                        width: 40%;
                         display: flex;
                         flex-direction: row;
 
@@ -139,7 +141,7 @@ body{
                     }
 
                     .animal__type{
-                        width: 51px;
+                        width: 30%;
                         height: 16px;
                         font-size: 12px;
                         font-weight: normal;
@@ -148,11 +150,14 @@ body{
                         line-height: 1.33;
                         letter-spacing: 1.2px;
                         color: #8e8497;
-                        margin: auto 0;
+                        margin: auto;
+                        text-align: center;
                     }
 
                     .animal__options{
-                        display: none;
+                        display: flex;
+                        visibility: hidden;
+                        width: 30%;
                         flex-direction: row;
                         margin: 35px;
 
@@ -174,7 +179,7 @@ body{
                     }
 
                     .animal__options.animal--mouse-over{
-                        display: flex;
+                        visibility: visible;
                     }
                 }
             }
