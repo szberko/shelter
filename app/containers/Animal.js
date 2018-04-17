@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 export class Animal extends Component{
     constructor(props){
@@ -9,6 +10,8 @@ export class Animal extends Component{
 
         this.mouseOver = this.mouseOver.bind(this);
         this.mouseOut = this.mouseOut.bind(this);
+        this.adapt = this.adapt.bind(this);
+        this.remove = this.remove.bind(this);
     }
 
     mouseOver() {
@@ -17,6 +20,16 @@ export class Animal extends Component{
 
     mouseOut() {
         this.setState({hover: ""});
+    }
+
+    adapt() {
+        this.props.animal.adopted = true;
+        axios.put('http://localhost:3004/animals/' + this.props.animal.id, this.props.animal)
+    }
+
+    remove() {
+        this.props.animal.removed = true;
+        axios.put('http://localhost:3004/animals/' + this.props.animal.id, this.props.animal)
     }
 
     render() {
@@ -29,19 +42,19 @@ export class Animal extends Component{
                 <div className="animal__id">
                     <div className="animal__pic"></div>
                     <div className="animal__metadata">
-                        <span className="metadata__name">{this.props.name}</span>
-                        <span className="metadata__others">Chip-szám: {this.props.chip}</span>
-                        <span className="metadata__others">Szőrszín: {this.props.color}</span>
+                        <span className="metadata__name">{this.props.animal.name} ({this.props.animal.year})</span>
+                        <span className="metadata__others">Chip-szám: {this.props.animal.chip}</span>
+                        <span className="metadata__others">Szőrszín: {this.props.animal.color}</span>
                     </div>
                 </div>
 
                 
-                <div className="animal__type">{this.props.type}</div>
+                <div className="animal__type">{this.props.animal.type}</div>
                 <div className={"animal__options " + this.state.hover}>
-                    <button className="options__adapt">Adoptálás</button>
-                    <div className="options__remove">
-                    <img src={require('./../assets/group-9.png')} 
-                    srcSet={require("./../assets/group-9@2x.png") + " 2x," + require("./../assets/group-9@3x.png") + " 3x"}/>
+                    <button className="options__adapt" onClick={() => this.adapt()}>Adoptálás</button>
+                    <div className="options__remove" onClick={() => this.remove()}>
+                        <img src={require('./../assets/group-9.png')} 
+                        srcSet={require("./../assets/group-9@2x.png") + " 2x," + require("./../assets/group-9@3x.png") + " 3x"}/>
                     </div>
                 </div>
             </div>

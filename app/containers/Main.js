@@ -3,9 +3,24 @@ import {Animal} from './Animal';
 import ReactDOM from 'react-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
-import myData from './../data/animals.json';
+import axios from 'axios';
+
 
 export class Main extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            animals: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:3004/animals').then(response => {
+            const animals = response.data;
+            this.setState({ animals });
+        })
+    }
+    
     render() {
         return (
             <div className="main-container__body">
@@ -18,28 +33,24 @@ export class Main extends Component{
                 
                     <TabPanel>
                     {
-                        myData.map(function(animal, i){
+                        this.state.animals.map(function(animal, i){
                             if(!animal.adopted && !animal.removed){
                                 return <Animal 
-                                        key={i} 
-                                        name={animal.name} 
-                                        chip={animal.chip}
-                                        color={animal.color}
-                                        type={animal.type}/>
+                                        key={i}
+                                        animal={animal}
+                                        />
                             }
                         })
                     }
                     </TabPanel>
                     <TabPanel>
                     {
-                        myData.map(function(animal, i){
+                        this.state.animals.map(function(animal, i){
                             if(animal.adopted && !animal.removed){
                                 return <Animal 
-                                        key={i} 
-                                        name={animal.name} 
-                                        chip={animal.chip}
-                                        color={animal.color}
-                                        type={animal.type}/>
+                                        key={i}
+                                        animal={animal}
+                                        />
                             }
                         })
                     }
