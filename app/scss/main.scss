@@ -60,18 +60,124 @@ body{
                 flex-direction: row;
                 justify-content: space-between;
 
-                ul#navigation{
+                .navigation ul{
                     margin: 0px;
                     padding: 0px;
                     list-style-type: none;
     
-                    li{
+                    li.navigation__tab{
                         display: inline-block;
                         padding: 0 15px;
                     }
                 }
             }
-            
+
+            .body__content{
+                display: block;
+
+                .animal{
+                    width: 1044px;
+                    height: 100px;
+                    border-radius: 100px;
+                    background-color: rgba(180, 180, 180, 0.4);
+                    margin: 10px 0;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    *{
+                        z-index: 1;
+                    }
+
+                    .animal__id{
+                        display: flex;
+                        flex-direction: row;
+
+                        .animal__pic{
+                            content: '';
+                            width: 60px;
+                            height: 60px;
+                            background-color: #ffffff;
+                            box-sizing: border-box;
+                            border: solid 2px #ded7e2;
+                            border-radius: 50px;
+                            margin: 20px;
+                        }
+    
+                        .animal__metadata{
+                            padding: 22px 0;
+                            display: flex;
+                            flex-direction: column;
+    
+                            .metadata__name{
+                                width: 320px;
+                                height: 17px;
+                                font-size: 14px;
+                                font-weight: normal;
+                                font-style: normal;
+                                font-stretch: normal;
+                                line-height: normal;
+                                letter-spacing: 2px;
+                                text-align: left;
+                                color: #2a163c;
+                            }
+    
+                            .metadata__others{
+                                width: 151px;
+                                height: 36px;
+                                font-size: 12px;
+                                font-weight: normal;
+                                font-style: normal;
+                                font-stretch: normal;
+                                line-height: 1.5;
+                                letter-spacing: 1.2px;
+                                text-align: left;
+                                color: #8e8497;
+                            }
+                        }
+                    }
+
+                    .animal__type{
+                        width: 51px;
+                        height: 16px;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: 1.2px;
+                        color: #8e8497;
+                        margin: auto 0;
+                    }
+
+                    .animal__options{
+                        display: none;
+                        flex-direction: row;
+                        margin: 35px;
+
+                        .options__adapt{
+                            width: 140px;
+                            height: 30px;
+                            border-radius: 100px;
+                            background-image: linear-gradient(to right, #f37942, #e91562);
+                            line-height: 30px;
+                            text-align: center;
+                            margin: 0 30px;
+                        }
+
+                        .options__remove{
+                            width: 30px;
+                            height: 30px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .animal__options.animal--mouse-over{
+                        display: flex;
+                    }
+                }
+            }
         }
     }
 }
