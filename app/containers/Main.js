@@ -9,9 +9,23 @@ import axios from 'axios';
 export class Main extends Component{
     constructor(props){
         super(props);
+
+        this.animalsChanged = this.animalsChanged.bind(this);
+
         this.state = {
             animals: []
         }
+
+       
+    }
+
+    animalsChanged() {
+        
+        axios.get('http://localhost:3004/animals').then(response => {
+            console.log("animalsChanged");
+            const animals = response.data;
+            this.setState({ animals });
+        })
     }
 
     componentDidMount() {
@@ -33,11 +47,12 @@ export class Main extends Component{
                 
                     <TabPanel>
                     {
-                        this.state.animals.map(function(animal, i){
+                        this.state.animals.map((animal, i) => {
                             if(!animal.adopted && !animal.removed){
                                 return <Animal 
                                         key={i}
                                         animal={animal}
+                                        updateAnimals={this.animalsChanged}
                                         />
                             }
                         })
@@ -45,11 +60,12 @@ export class Main extends Component{
                     </TabPanel>
                     <TabPanel>
                     {
-                        this.state.animals.map(function(animal, i){
+                        this.state.animals.map((animal, i) => {
                             if(animal.adopted && !animal.removed){
                                 return <Animal 
                                         key={i}
                                         animal={animal}
+                                        updateAnimals={this.animalsChanged}
                                         />
                             }
                         })

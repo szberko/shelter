@@ -24,12 +24,21 @@ export class Animal extends Component{
 
     adapt() {
         this.props.animal.adopted = true;
-        axios.put('http://localhost:3004/animals/' + this.props.animal.id, this.props.animal)
+        axios.put('http://localhost:3004/animals/' + this.props.animal.id, this.props.animal).then(response => {
+            if(response.status === 200){
+                this.props.updateAnimals();
+            }
+        });
+        
     }
 
     remove() {
         this.props.animal.removed = true;
-        axios.put('http://localhost:3004/animals/' + this.props.animal.id, this.props.animal)
+        axios.put('http://localhost:3004/animals/' + this.props.animal.id, this.props.animal).then(response => {
+            if(response.status === 200){
+                this.props.updateAnimals();
+            }
+        })
     }
 
     render() {
