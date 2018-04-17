@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Morzsi",
+        "year": 1,
+        "chip": "23675439",
+        "color": "fekete",
+        "type": "Kutya",
+        "adopted": false,
+        "removed": false
+    },
+    {
+        "name": "Cirmi",
+        "year": 2,
+        "chip": "",
+        "color": "vörös",
+        "type": "Macska",
+        "adopted": false,
+        "removed": false
+    },
+    {
+        "name": "Bátor",
+        "year": 5,
+        "chip": "23675410",
+        "color": "vörös",
+        "type": "Kutya",
+        "adopted": true,
+        "removed": false
+    }
+]
