@@ -11,11 +11,12 @@ export class Main extends Component{
 
         this.animalsChanged = this.animalsChanged.bind(this);
         this.changeNavigation = this.changeNavigation.bind(this);
+        this.changeType = this.changeType.bind(this);
 
         this.state = {
             animals: [],
-            selectedOption: 'gazdara_var',
-            
+            selectedOption: 'not_adapted',
+            selectedType: 'all'
         }
     }
 
@@ -44,14 +45,26 @@ export class Main extends Component{
         );
     }
 
+    changeType(type){
+        this.setState(
+            {
+                selectedType : type
+            }
+        );
+    }
+
     render() {
         return (
             <div className="main-container__body">
                 <div className="body__menu">
-                    <Navigation selectOption={this.changeNavigation}/>
+                    <Navigation 
+                        changeNavigation={this.changeNavigation}
+                        changeType={this.changeType}
+                        selectedOption={this.state.selectedOption}
+                        />
                     {
                         this.state.animals.map((animal, i) => {
-                            if(this.state.selectedOption === 'orokbe_adott'){
+                            if(this.state.selectedOption === 'adapted'){
                                 if(animal.adopted && !animal.removed){
                                     return <Animal 
                                             key={i}

@@ -10,17 +10,27 @@ export class Navigation extends Component{
     }
 
     render() {
+        console.log(this.props.selectedOption);
         return (
             <div className="navbar">
-                <a href="#home" onClick={() => this.props.selectOption('gazdara_var')}>Gazdára vár</a>
-                <a href="#news" onClick={() => this.props.selectOption('orokbe_adott')}>Örökbeadott</a>
-                <div className="dropdown">
+                <a className={"navbar__elem " + (this.props.selectedOption === 'not_adapted' ? 'navbar__current' : '')}
+                    onClick={() => this.props.changeNavigation('not_adapted')}
+                    >
+                    Gazdára vár
+                </a>
+                <a className={"navbar__elem " + (this.props.selectedOption === 'adapted' ? 'navbar__current' : '')}
+                    onClick={() => this.props.changeNavigation('adapted')}
+                    >
+                    Örökbeadott
+                </a>
+                <div className="navbar__elem dropdown">
                     <button className="dropbtn">Szűrő 
                     <i className="fa fa-caret-down"></i>
                     </button>
                     <div className="dropdown-content">
-                    <a href="#">Kutya</a>
-                    <a href="#">Macska</a>
+                    <a onClick={() => this.props.changeType('all')}>Mind</a>
+                    <a onClick={() => this.props.changeType('dog')}>Kutya</a>
+                    <a onClick={() => this.props.changeType('cat')}>Macska</a>
                     </div>
                 </div> 
             </div>
