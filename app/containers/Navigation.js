@@ -10,7 +10,6 @@ export class Navigation extends Component{
     }
 
     render() {
-        console.log(this.props.selectedOption);
         return (
             <div className="navbar">
                 <a className={"navbar__elem " + (this.props.selectedOption === 'not_adapted' ? 'navbar__current' : '')}

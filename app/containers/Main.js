@@ -22,7 +22,6 @@ export class Main extends Component{
 
     animalsChanged() {
         axios.get('http://localhost:3004/animals').then(response => {
-            console.log("animalsChanged");
             const animals = response.data;
             this.setState({ animals });
         })
@@ -32,9 +31,33 @@ export class Main extends Component{
         axios.get('http://localhost:3004/animals').then(response => {
             const animals = response.data;
             this.setState({ animals });
-        })
+        })        
+    }
 
-        
+    filterAnimals(animals){
+        let filteredAnimals = [];
+            switch(this.state.selectedOption){
+                case 'adapted': {
+                    filteredAnimals = animals.filter(animal => animal.adopted && !animal.removed);
+                    break;
+                }
+                case 'not_adapted':{
+                    filteredAnimals = animals.filter(animal => !animal.adopted && !animal.removed);
+                    break;
+                }
+            }
+       
+            switch(this.state.selectedType){
+                case 'cat': {
+                    filteredAnimals = filteredAnimals.filter(animal => animal.type !== 'Kutya');
+                    break;
+                }
+                case 'dog': {
+                    filteredAnimals = filteredAnimals.filter(animal => animal.type !== 'Macska');
+                    break;
+                }
+            }
+        return filteredAnimals;
     }
 
     changeNavigation(navItem){
@@ -54,6 +77,8 @@ export class Main extends Component{
     }
 
     render() {
+        let filteredAnimals = this.filterAnimals(this.state.animals);
+
         return (
             <div className="main-container__body">
                 <div className="body__menu">
@@ -63,24 +88,12 @@ export class Main extends Component{
                         selectedOption={this.state.selectedOption}
                         />
                     {
-                        this.state.animals.map((animal, i) => {
-                            if(this.state.selectedOption === 'adapted'){
-                                if(animal.adopted && !animal.removed){
-                                    return <Animal 
-                                            key={i}
-                                            animal={animal}
-                                            updateAnimals={this.animalsChanged}
-                                            />
-                                }
-                            }else{
-                                if(!animal.adopted && !animal.removed){
-                                    return <Animal 
-                                            key={i}
-                                            animal={animal}
-                                            updateAnimals={this.animalsChanged}
-                                            />
-                                }
-                            }
+                        filteredAnimals.map((animal, i) => {
+                            return <Animal 
+                                    key={i}
+                                    animal={animal}
+                                    updateAnimals={this.animalsChanged}
+                                    />
                         })
                     }
                 </div>
