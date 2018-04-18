@@ -1,0 +1,26 @@
+.main-container{
+    .main-container__header{
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        padding: 53px 0;
+        
+        #logo{
+            height: 55px;
+            width: 61px;
+        }
+        #company-name{
+            width: 256.7px;
+            height: 42px;
+            opacity: 0.75;
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 2.6px;
+            text-align: left;
+            color: #ef7a3e;
+        }
+    }
+}
