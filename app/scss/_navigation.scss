@@ -4,6 +4,7 @@ $nav-item_active-color: #000000;
 
 .navbar {
     overflow: hidden;
+    margin-bottom: 67px;
 
     >:first-child{
         margin-right: 100px;
@@ -36,7 +37,6 @@ $nav-item_active-color: #000000;
             outline: none;
             color: $nav-item_idle-color;
             background-color: inherit;
-            font-family: inherit;
             margin: 0;
             font-weight: normal;
             font-style: normal;
