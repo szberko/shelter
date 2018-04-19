@@ -3,6 +3,7 @@
 @import 'main-container-body';
 @import 'navigation';
 @import 'footer';
+@import 'dot';
 
 /** Light */
 @font-face {
@@ -21,8 +22,6 @@ body{
 }
 
 #app {
-    width: 100vw;
-    height: 100vh;
     background: linear-gradient(to top, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) ),  url('./../assets/background.png');
     background-size: cover;
     background-repeat: no-repeat;

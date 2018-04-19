@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Animal} from './Animal';
 import {Navigation} from './Navigation';
+import {Dot} from './Dot';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
@@ -96,6 +97,9 @@ export class Main extends Component{
                                     />
                         })
                     }
+                    <Dot extraClassName="first-dot"/>
+                    <Dot/>
+                    <Dot/>
                 </div>
             </div>
         );
