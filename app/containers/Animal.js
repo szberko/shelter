@@ -43,7 +43,7 @@ export class Animal extends Component{
 
     render() {
         return (
-            <div className="animal"
+            <div className={"animal " + (this.props.animal.adopted == false ? this.state.hover : '') }
                 onMouseEnter={this.mouseOver}
                 onMouseLeave={this.mouseOut}
                 >
