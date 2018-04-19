@@ -1,11 +1,16 @@
 .main-container__body{
     min-height: 40vh;
     margin-bottom: 100px;
+
+    .animal.animal--mouse-over{
+        background-color: #ded7e2;
+    }
+    
     .animal{
         width: 1044px;
         height: 100px;
         border-radius: 100px;
-        background-color: rgba(180, 180, 180, 0.4);
+        background-color: rgba(222, 215, 226, 0.4);
         margin: 10px 0;
 
         display: flex;
