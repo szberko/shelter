@@ -8,7 +8,7 @@ export class Header extends Component {
                     <img src={require('./../assets/logo-4.png')} 
                     srcSet={require("./../assets/logo-4@2x.png") + " 2x," + require("./../assets/logo-4@3x.png") + " 3x"}/>
                 </div>
-                <div id="company-name">Lagrande Alapítványi Menhely</div>
+                <div id="company-name-header">Lagrande Alapítványi Menhely</div>
             </div>
         );
     }
