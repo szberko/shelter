@@ -48,13 +48,14 @@
                     font-stretch: normal;
                     line-height: normal;
                     letter-spacing: 2px;
+                    margin-bottom: 4px;
                     text-align: left;
                     color: #2a163c;
                 }
 
                 .metadata__others{
                     width: 151px;
-                    height: 36px;
+                    height: 17px;
                     font-size: 12px;
                     font-weight: normal;
                     font-style: normal;
@@ -99,12 +100,14 @@
                 margin: 0 20px;
                 letter-spacing: 1.1px;
                 color: white;
+                cursor: pointer;
             }
 
             .options__remove{
                 width: 30px;
                 height: 30px;
                 object-fit: contain;
+                cursor: pointer;
             }
         }
 

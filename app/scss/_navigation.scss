@@ -24,6 +24,7 @@ $nav-item_active-color: #000000;
         letter-spacing: 2.3px;
         text-align: center;
         color: $nav-item_idle-color;
+        cursor: pointer;
     }
 
     .navbar__elem.dropdown{
