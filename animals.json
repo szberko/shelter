@@ -29,6 +29,36 @@
       "type": "Kutya",
       "adopted": false,
       "removed": false
+    },
+    {
+      "id": 4,
+      "name": "Morzsi 1",
+      "year": 1,
+      "chip": "23675439",
+      "color": "fekete",
+      "type": "Kutya",
+      "adopted": true,
+      "removed": false
+    },
+    {
+      "id": 5,
+      "name": "Cirmi 1",
+      "year": 2,
+      "chip": "",
+      "color": "vörös",
+      "type": "Macska",
+      "adopted": false,
+      "removed": false
+    },
+    {
+      "id": 6,
+      "name": "Bátor 1",
+      "year": 5,
+      "chip": "23675410",
+      "color": "vörös",
+      "type": "Kutya",
+      "adopted": false,
+      "removed": false
     }
   ]
 }
