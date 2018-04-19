@@ -7,9 +7,11 @@ import './../scss/main.scss';
 export default class App extends Component {
     render () {
         return (
-            <div className="main-container">
-                <Header/>
-                <Main/>
+            <div>
+                <div className="main-container">
+                    <Header/>
+                    <Main/>
+                </div>
                 <Footer/>
             </div>
         );
